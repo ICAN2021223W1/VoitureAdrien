@@ -5,9 +5,8 @@
 
 <h2>Modifier le modele</h2>
 <form action="index.php?m=modele_update&modele=<?= $_GET['modele']; ?>" method="POST">
+	
 	<label for="nom">Nom :</label>
-
-	<h1>HELLO</h1>
 	<br>
 	<input type="text" name="nom" id="nom" value="<?= $modele->getNom(); ?>">
 	<br>
