@@ -1,5 +1,5 @@
 <?php
-	$url = "/voiture/src/";
+	$url = "/voituremodele/src/";
 	$path = "/Applications/MAMP/htdocs".$url;
 ?>
 <!DOCTYPE html>
