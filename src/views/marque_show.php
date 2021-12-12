@@ -51,7 +51,7 @@
 <h2>Modifier la marque</h2>
 <form action="index.php?m=marque_update&marque=<?= $_GET['marque']; ?>"  method="POST">
 	<input type="hidden" name="id" value="<?= $marque->getId(); ?>">
-	<label for="nom">Promo :</label>
+	<label for="nom">Nom :</label>
 	<br>
 	<input type="text" name="nom" id="nom" value="<?= $marque->getNom(); ?>">
 	<br>
@@ -64,7 +64,7 @@
 <h2>Ajouter un modele dans la marque</h2>
 <form action="index.php?m=modele_insert" method="POST">
 	<input type="hidden" name="marque" value="<?= $marque->getId(); ?>">
-	<label for="promo">Nom :</label>
+	<label for="nom">Nom :</label>
 	<br>
 	<input type="text" name="nom" id="nom">
 	<br>
