@@ -13,7 +13,7 @@
 	<br>
 	<input type="text" name="prix" id="prix" value="<?= $modele->getPrix(); ?>">
 	<br>
-	<input type="submit" name="update_marque" value="Mettre à jour" class="btn btn-primary">
+	<input type="submit" name="update_marque" value="Mettre à jour" class="btn btn-dark mt-3">
 </form>
 
 <hr>

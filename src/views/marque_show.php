@@ -72,5 +72,5 @@
 	<br>
 	<input type="text" name="prix" id="prix">
 	<br>
-	<input type="submit" name="insert_classe" value="Ajouter" class="btn btn-dark mt-3">
+	<input type="submit" name="insert_classe" value="Ajouter" class="btn btn-outline-dark mt-3">
 </form>
