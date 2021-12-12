@@ -56,7 +56,7 @@
 	<input type="text" name="nom" id="nom" value="<?= $marque->getNom(); ?>">
 	<br>
 	
-	<input type="submit" name="update_classe" value="Mettre à jour" class="btn btn-primary">
+	<input type="submit" name="update_classe" value="Mettre à jour" class="btn btn-dark mt-3">
 </form>
 
 <hr>
@@ -72,5 +72,5 @@
 	<br>
 	<input type="text" name="prix" id="prix">
 	<br>
-	<input type="submit" name="insert_classe" value="Ajouter" class="btn btn-primary">
+	<input type="submit" name="insert_classe" value="Ajouter" class="btn btn-dark mt-3">
 </form>
