@@ -1,24 +1,25 @@
 <?php
     class ModelesController {
         public function list() {
-            
+            //Mise en tampon de tout ce qui suit
 
             ob_start();
 
             $mac = new MarqueManager();
 
-           
+            //Récupération de la table 'marque'
+
             $marques = $mac->findAll();
 
-            
+            //Je génére un tableau d'objects PHP pour pouvoir faire le foreach
 
             $liste_marques = $marque->fetchAll()(PDO::FETCH_CLASS, 'Marque');
 
-           
+            //Récupération de la vue
 
             require_once 'src/views/marque_list.php';
 
-            
+            //Récupération du tampon
             $contenu = ob_get_clean();
             echo $contenu;
 
@@ -28,15 +29,15 @@
 	 * Sauvegarde un modèle
 	 */
 	public function save(){
-		
+		// Je vérifie que j'ai reçu tous les champs et qu'ils ne sont pas vides
 		if(isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['prix']) && !empty($_POST['prix'])){
 			
-			
+			// Je vérifie que la marque reçu du formulaire corresponde bien à une marque dans la base
 			$mac = new MarqueManager();
 			$marque = $mac->findOneById($_POST['marque']);
-			
+			// Si j'ai une correspondance dans la base
 			if($marque->rowCount() == 1){
-				
+				// Je crée mon objet
 				$moc = new ModeleManager();
 				// Je lui assigne les valeurs reçues par le formulaire
 				$moc->setNom($_POST['nom'])
@@ -81,7 +82,8 @@
             
 
 
-                    
+                    // Je récupère les modeles présentes dans la marque
+                    //$modeles = $mo->findByMarque($marque->getId());
                     
 
                     require_once 'src/views/modele_show.php';
@@ -100,20 +102,20 @@
 
         public function update() {
             if(isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['prix']) && !empty($_POST['prix']) && isset($_POST['id']) && !empty($_POST['id'])){
-                
+                // Je crée l'objet 'cm' de type 'ModeleManager'
 			$moc = new ModeleManager();
 
-			
+			// Je vérifie que l'id reçu par le formulaire corresponde bien à une modele dans la base
 			$modele = $moc->findOneById($_POST['id']);
-			
+			// Si j'ai un résultat, c'est que la modele existe en base
 			if($modele->rowCount() == 1){
-				
+				// Je lui assigne les données reçues par le formulaire
 				$moc->setId($_POST['id'])
 					->setNom($_POST['nom'])
-					->setPrix($_POST['prix']);
+					->setPrix($_POST['Prix']);
 
-				
-				if($moc->updateModele()->rowCount() >= 1){
+				// Je met à jour l'élément et je regarde le nombre de lignes affectées par l'opération
+				if($moc->update()->rowCount() >= 1){
 					echo "<p class='text-success'>Modele mise à jour.</p>";
 				}
 				else{
