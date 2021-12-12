@@ -112,10 +112,10 @@
 				// Je lui assigne les données reçues par le formulaire
 				$moc->setId($_POST['id'])
 					->setNom($_POST['nom'])
-					->setPrix($_POST['Prix']);
+					->setPrix($_POST['prix']);
 
 				// Je met à jour l'élément et je regarde le nombre de lignes affectées par l'opération
-				if($moc->update()->rowCount() >= 1){
+				if($moc->updateModele()->rowCount() >= 1){
 					echo "<p class='text-success'>Modele mise à jour.</p>";
 				}
 				else{

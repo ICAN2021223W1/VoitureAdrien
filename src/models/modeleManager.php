@@ -103,7 +103,7 @@ class ModeleManager extends Modele {
 		$bdd = new BDD();
 		// Récupération de la connexion :
 		$connexion = $bdd->getCo();
-
+		echo 'ok';
 		$sql = "UPDATE modele SET nom = :n , prix = :p WHERE id = :id;";
 		// Prépare la requete SQL :
 		$req = $connexion->prepare($sql);

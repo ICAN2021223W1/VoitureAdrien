@@ -26,11 +26,7 @@
             return $this->nom;
         }
 
-        public function setPrix(float $prix) : self 
-        {
-            $this->prix = $prix;
-            return $this;
-        }
+        
 
        
     }

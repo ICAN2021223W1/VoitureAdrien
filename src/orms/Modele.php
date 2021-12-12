@@ -13,7 +13,7 @@
             return $this->id;
         }
 
-        public function setNom(string $nom) {
+        public function setNom(string $nom) : self {
             $this->nom = $nom;
             return $this;
         }
@@ -22,7 +22,7 @@
             return $this->nom;
         }
 
-        public function setPrix(float $prix) : self 
+        public function setPrix(float $prix) 
         {
             $this->prix = $prix;
             return $this;
