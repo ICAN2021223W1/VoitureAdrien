@@ -145,7 +145,8 @@
                 if($marque->rowCount() == 1){
                     // Je lui assigne les données reçues par le formulaire
                     $mac->setId($_POST['id'])
-                        ->setNom($_POST['nom']);
+                        ->setNom($_POST['nom'])
+                        ->setPrix($_POST['prix']);
 
                     // Je met à jour l'élément et je regarde le nombre de lignes affectées par l'opération
                     if($mac->updateMarque()->rowCount() >= 1){
