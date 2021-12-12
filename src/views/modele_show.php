@@ -1,7 +1,7 @@
 <h2>Modèle</h2>
 <h3>Ajouter une marque</h3>
-<td><?= $modele->getNom(); ?></td>
-<td><?= $modele->getPrix(); ?></td>
+<td><p>Nom de la marque : <?= $modele->getNom(); ?></p></td>
+<td><p>Prix du Modèle : <?= $modele->getPrix()."€"; ?></p></td>
 
 <h2>Modifier le modele</h2>
 <form action="index.php?m=modele_update&modele=<?= $_GET['modele']; ?>" method="POST">
