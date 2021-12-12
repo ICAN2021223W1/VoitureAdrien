@@ -111,10 +111,11 @@
 			if($modele->rowCount() == 1){
 				// Je lui assigne les données reçues par le formulaire
 				$cm->setId($_POST['id'])
-					->setPromo($_POST['promo']);
+					->setNom($_POST['nom'])
+					->setPrix($_POST['prix']);
 
 				// Je met à jour l'élément et je regarde le nombre de lignes affectées par l'opération
-				if($cm->update()->rowCount() >= 1){
+				if($cm->updateModele()->rowCount() >= 1){
 					echo "<p class='text-success'>Modele mise à jour.</p>";
 				}
 				else{

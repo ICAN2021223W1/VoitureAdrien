@@ -104,12 +104,13 @@ class ModeleManager extends Modele {
 		// Récupération de la connexion :
 		$connexion = $bdd->getCo();
 
-		$sql = "UPDATE marque SET nom = :n WHERE id = :id;";
+		$sql = "UPDATE modele SET nom = :n , prix = :p WHERE id = :id;";
 		// Prépare la requete SQL :
 		$req = $connexion->prepare($sql);
 		// Execute la requete SQL :
 		$req->execute([
 			'n' => $this->getNom(),
+			'p' => $this->getPrix(),
 			'id'=> $this->getId()
 		]);
 
