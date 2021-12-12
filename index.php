@@ -46,18 +46,18 @@ if(isset($_GET['m'])){
 		
 
 		case 'modele_show':
-			$cc = new ModelesController();
-			$cc->show();
+			$moc = new ModelesController();
+			$moc->show();
 			break;
 
 		case 'modele_delete':
-			$cc = new MarqueController();
-			$cc->deleteModele();
+			$mac = new MarqueController();
+			$mac->deleteModele();
 			break;
 
 		case 'modele_insert':
-			$cc = new ModelesController();
-			$cc->save();
+			$moc = new ModelesController();
+			$moc->save();
 			break;
 
 		case 'modele_update':
